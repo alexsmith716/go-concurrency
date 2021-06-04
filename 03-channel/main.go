@@ -7,6 +7,8 @@ import (
 
 // 'channels' enable goroutines to communicate with each other
 // 'channels' send and receive messages -a blocking action
+// sending a message:   the channel waits until the receiver can accept the message
+// receiving a message: the channel waits until the sender delivers the message 
 // channel operation is synchronous when sending and receiving messages
 
 // channel is created with 'chan' keyword and a data type as arg to 'make()' function
@@ -38,7 +40,7 @@ func sendTimeMessage(msg string, channel chan string) {
 
 func main() {
 
-	// create channel
+	// create empty channel
 	newChannel := make(chan string)
 
 	// add a goroutine that passes a channel
