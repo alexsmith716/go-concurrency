@@ -40,7 +40,7 @@ func main() {
 	go fastChannelSender(fastChannel)
 	go slowChannelSender(slowChannel)
 
-	// loop with receiver for each channels
+	// loop with receiver for each channel
 	for {
 		slowChannelMessage, open := <- slowChannel
 		fastChannelMessage, open := <- fastChannel
