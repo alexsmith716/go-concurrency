@@ -7,6 +7,7 @@ import (
 // example demonstrates a 'buffered' channel (ability to send items to a channel as a 'queue')
 // channels are 'unbuffered' by default (a receiver must exist for a sent message to be delivered)
 // the 'sending action' is blocking, so sender & receiver must be in separate goroutines, otherwise `deadlock`
+// if sender and receiver are in the same function block -here 'main(){}', the sender blocking action will result in a `deadlock`
 // specifying the 2nd arg 'buffer capacity' to the 'make()' function prevents 'unbuffered' `deadlock`
 
 // https://golang.org/ref/spec#Channel_types
