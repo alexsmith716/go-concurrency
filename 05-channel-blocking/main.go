@@ -7,7 +7,8 @@ import (
  
 // example demonstrates combining goroutines with channels and the resulting 'blocking action' of channels
 // when goroutines send messages, the program may block progress while it waits to receive those messages (the slower ones)
-// this example is in contrast to the 'select statement' example
+
+// this example is in contrast to the 'select-statement' example
 
 // https://golang.org/ref/spec#Select_statements
 

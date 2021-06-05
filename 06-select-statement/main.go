@@ -12,6 +12,8 @@ import (
 // all select statement 'cases' refer to channel communication operations
 // the 'select' statement blocks until one of its 'cases' finds a match, that match then gets executed
 
+// this example is in contrast to the 'channel-blocking' example
+
 // REVIEW: >>>>> an intialized variable consists of 3 parts (name, value, memory address) <<<<<
 
 // https://golang.org/ref/spec#Select_statements
@@ -38,7 +40,7 @@ func slowChannelSender(channel chan string) {
 
 func main() {
 
-	// create a 7 second counter channel
+	// create a 26 second counter channel
 	timeoutChannel := time.After(26 * time.Second)
 
 	// create 2 empty channels
@@ -66,7 +68,7 @@ func main() {
 	}
 }
 
-// example with 'fastChannelSender()' sleeping 1 sec & 'slowChannelSender()' sleeping 1 sec
+// example with 'fastChannelSender()' sleeping 1 sec & 'slowChannelSender()' sleeping 6 secs
 //
 //	% go run main.go
 //	16:22 	--slowChannelMessage Received! 
