@@ -26,7 +26,7 @@ import (
 // function creates a channel sender for 'newChannel' which sends 3 messages at a 1-sec interval and then closes
 func sendTimeMessage(msg string, channel chan string) {
 
-	// fmt.Printf("channchannelchannel %T \n", channel)
+	// fmt.Printf("channel data type: %T \n", channel)
 
 	for i := 0; i < 3; i++ {
 		// 'send' a message with the time to channel 'newChannel'
