@@ -18,7 +18,7 @@ import (
 
 // https://blog.golang.org/pipelines
 
-// >>>>>> DONT FORGET TO CLOSE FINISHED SENDING CHANNEL <<<<<<<
+// >>>>>> DONT FORGET TO CLOSE FINISHED SENDING CHANNELS <<<<<<<
 
 // channel 'numbers' may only 'receive' items
 func startPipelineFunction(numbers chan<- int) {
@@ -59,7 +59,7 @@ func main() {
 	squared := make(chan string)
 	result := make(chan string)
 
-	// start sequence of calling goroutines
+	// start calling goroutines
 	go startPipelineFunction(numbers) // begin pipeline with 'received' data
 	go continuePipelineFunctionA(numbers, squared) // continue pipeline with previous channel 'sending' into new channel
 	go continuePipelineFunctionB(squared, result) // continue pipeline with previous channel 'sending' into new channel
